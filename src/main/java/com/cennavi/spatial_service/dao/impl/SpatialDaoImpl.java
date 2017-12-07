@@ -330,7 +330,7 @@ public class SpatialDaoImpl implements SpatialDao {
 
 		String sql = null;
 		
-		List<Map<String,Double>> ps = new ArrayList<Map<String,Double>>();
+		List<List<Map<String,Double>>> pps = new ArrayList<List<Map<String,Double>>>();
 		
 		Map<String,Object> result = new HashMap<String,Object>();
 		
@@ -355,6 +355,8 @@ public class SpatialDaoImpl implements SpatialDao {
 //				List<Map<String, Double>> list = new ArrayList<Map<String, Double>>();
 
 				Coordinate[] cs = geom.getCoordinates();
+				
+				List<Map<String,Double>> ps = new ArrayList<Map<String,Double>>();
 
 				for (Coordinate co : cs) {
 					Map<String, Double> m = new HashMap<String, Double>();
@@ -366,6 +368,8 @@ public class SpatialDaoImpl implements SpatialDao {
 //					list.add(m);
 					ps.add(m);
 				}
+				
+				pps.add(ps);
 
 //				map.put("location", list);
 
@@ -380,7 +384,7 @@ public class SpatialDaoImpl implements SpatialDao {
 
 		}
 		
-		result.put("location", ps);
+		result.put("location", pps);
 		
 		return result;
 
