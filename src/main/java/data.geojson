@@ -1,15 +1,15 @@
 {
 	"features": [{
-		"geometry": {
-		"type": "Point",
-			"coordinates": [116.82451,
-			39.75793]
-			
-		},
 		"type": "Feature",
 		"properties": {
 			"kind_code": "220100",
 			"pid": 5
+		},
+		"geometry": {
+		"type": "Point",
+			"coordinates": [116.82451,
+			39.75793]			
 		}
+		
 	}]
 }
